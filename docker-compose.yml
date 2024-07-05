@@ -1,6 +1,18 @@
 version: "3.8"
 
 services:
+  tg_bot:
+    image: alexk0valchuk/bwgcombat:tgbot
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BACKEND_URL=${BACKEND_URL}
+      - WEBAPP_URL=${WEBAPP_URL}
+      - ADMIN_ID=${ADMIN_ID}
+      - CHANNEL_ID=${CHANNEL_ID}
+      - CHANNEL_URL=${CHANNEL_URL}
+    depends_on:
+      - frontend
+      - backend
   frontend:
     image: alexk0valchuk/bwgcombat:frontend
     ports:
@@ -47,11 +59,12 @@ services:
       - ./ngrok.yml:/etc/ngrok.yml
     environment:
       - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+      - WEBAPP_URL=${WEBAPP_URL}
     ports:
       - 4040:4040
     depends_on:
       - frontend
       - backend
-    
+
 volumes:
     dev-db-data:
