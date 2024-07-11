@@ -1,0 +1,7 @@
+version: "2"
+
+tunnels:
+  backend_tunel:
+    hostname: guinea-present-evenly.ngrok-free.app
+    proto: http
+    addr: backend:8000

@@ -1,0 +1,7 @@
+version: "2"
+
+tunnels:
+  frontend_tunel:
+    hostname: caiman-driven-louse.ngrok-free.app
+    proto: http
+    addr: frontend:3000

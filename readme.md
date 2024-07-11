@@ -13,7 +13,8 @@ DB_USER=root
 DB_PASS=root
 DB_PORT=5432
 
-NGROK_AUTHTOKEN=__token__
+NGROK_AUTHTOKEN_FE=__token__
+NGROK_AUTHTOKEN_BE=__token__
 
 JWT_SIGNING_KEY=some_key
 
@@ -27,6 +28,8 @@ ADMIN_ID=111111111
 
 CHANNEL_ID=-1111111
 CHANNEL_URL=https://t.me/slug
+
+TG_CHANNEL=https://t.me/justforcheckingone
 ```
 
 1. Open DockerDesktop;
