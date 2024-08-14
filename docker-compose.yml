@@ -15,6 +15,13 @@ services:
       - backend
   frontend:
     image: alexk0valchuk/bwgcombat:frontend
+        volumes:
+      - ./config:/app/config
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+      - ./tailwind.config.js:/app/tailwind.config.js
     ports:
       - "3000:3000"
     env_file:
