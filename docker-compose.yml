@@ -15,7 +15,7 @@ services:
       - backend
   frontend:
     image: alexk0valchuk/bwgcombat:frontend
-        volumes:
+    volumes:
       - ./config:/app/config
       - ./src:/app/src
       - ./public:/app/public
