@@ -37,16 +37,34 @@ TG_CHANNEL=https://t.me/justforcheckingone
 ```
 2. Create an front.env file with the contents:
 ```
-REACT_APP_API_BASE_URL=http://localhost:8000
+REACT_APP_API_BASE_BASE_URL=http://localhost:8000
 REACT_APP_TELEGRAM_BOT_TOKEN=__token__
+
 REACT_APP_GET_USER_INFO_ENDPOINT=/user/get_info/
 REACT_APP_ADD_COINS_ENDPOINT=/user/add_coins/
 REACT_APP_GET_USER_REFERRALS_ENDPOINT=/user/get_user_referrals/
+REACT_APP_GET_FREN_LINK_ENDPOINT=/user/fren_link/
 REACT_APP_GET_USER_PARTNERS_ENDPOINT=/levels/partner_tasks/
 REACT_APP_GET_USER_SOCIALS_ENDPOINT=/levels/social_tasks/
 REACT_APP_EXECUTE_SWAP_ENDPOINT=/exchanger/execute_swap/
 REACT_APP_EXECUTE_TRANSFER_ENDPOINT=/exchanger/execute_transfer/
 REACT_APP_EXECUTE_TRANSACTIONS_ENDPOINT=/exchanger/all_transactions/
+REACT_APP_UPDATE_SETTINGS_ENDPOINT=/user/update_settings/
+REACT_APP_GET_ALL_ACTIVE_BANNER_ADVERTS_ENDPOINT=/ads/all_banner_adverts/
+REACT_APP_GET_RANDOM_FULLSCREEN_BANNER_ADVERTS_ENDPOINT=/ads/get_relevant_random_fullscreen_advert/
+REACT_APP_TRACK_BANNER_ADVERTS_ENDPOINT=/ads/track_banner_ad/
+REACT_APP_CHECK_PARTNER_TASK_ENDPOINT=/levels/check_partner_task/
+REACT_APP_CHECK_SOCIALS_TASK_ENDPOINT=/levels/check_social_task/
+REACT_APP_GET_TRANSFER_FEE_ENDPOINT=/exchanger/get_transfer_fee/
+REACT_APP_GET_EXCHANGER_RATE_ENDPOINT=/exchanger/get_exchange_rate/
+REACT_APP_BY_VIP_RATE_ENDPOINT=/exchanger/buy_vip/
+REACT_APP_EXECUTE_GAMELIST=/api/mini_games_app/
+REACT_APP_GAME1_MONEY=/api/mini_games_app/fortune
+REACT_APP_GAME1_START=/api/mini_games_app/fortune/start
+REACT_APP_GAME1_RESULT=/api/mini_games_app/fortune/result
+REACT_APP_GAME2_MONEY=/api/mini_games_app/sapper
+REACT_APP_GAME2_START=/api/mini_games_app/sapper/start
+REACT_APP_GAME2_RESULT=/api/mini_games_app/sapper/result
 
 REACT_APP_SKIP_TELEGRAM_INIT=false
 REACT_APP_TEST_USER_ID=123568
