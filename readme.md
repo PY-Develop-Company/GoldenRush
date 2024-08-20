@@ -91,10 +91,38 @@ if you are a frontend developer, then this line:\
 docker-compose up
 ```
 
-
+## How to deploy
+1. Enter vilors Dedicated Server
+2. Enter directory Documents/GitHub/GoldenRush/
+```
+cd Documents/GitHub/GoldenRush/
+```
+3. Stop Docker containers
+```
+sudo docker-compose down
+```
+4. Delete volume with db data
+```
+sudo docker volume rm goldenrush_dev-db-data
+```
+5. Pull new images from cloud. If frontend changed:
+```
+sudo docker pull alexk0valchuk/bwgcombat:frontend
+```
+6. Change .env or front.env file if needed:
+```
+sudo nano .env
+```
+```
+sudo nano front.env
+```
+6. Run the app
+```
+sudo docker-compose up
+```
 
 # 🇺🇦 (UA)
-## ☁️Запустіть хмарний проект
+## ☁️Запустити хмарний проект
 1. Створити файл .env з вмістом:
 ```
 DEBUG=1
@@ -155,7 +183,7 @@ REACT_APP_TEST_USER_ID=123568
 docker-compose up
 ```
 
-# 🏠Запустити локальний image
+## 🏠Запустити локальний image
 1. Створіть image;
 2. Знайдіть назву image у DockerDesktop;
 3. Змініть ім'я image в файлі docker-compose.yaml
@@ -164,4 +192,34 @@ docker-compose up
 4. Запустіть проект за допомогою команди 
 ```
 docker-compose up
+```
+
+## Як задеплоїти проект
+1. Увійдіть у віддалений сервер vilors
+2. Увійдіть в папку/директорію Documents/GitHub/GoldenRush/
+```
+cd Documents/GitHub/GoldenRush/
+```
+3. Зупиніть Docker контейнери
+```
+sudo docker-compose down
+```
+4. Видаліть volume з інформацією бази даних
+```
+sudo docker volume rm goldenrush_dev-db-data
+```
+5. Зтягніть зміни image з хмари. Якщо зміни фронту:
+```
+sudo docker pull alexk0valchuk/bwgcombat:frontend
+```
+6. Змініть .env або front.env файли якщо потрібно:
+```
+sudo nano .env
+```
+```
+sudo nano front.env
+```
+6. Запустити програму
+```
+sudo docker-compose up
 ```
