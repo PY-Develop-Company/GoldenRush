@@ -19,6 +19,12 @@ services:
       - "3000:3000"
     env_file:
       - front.env
+  frontend_admin:
+    image: alexk0valchuk/bwgcombat:frontend_admin
+    ports:
+      - "4000:3000"
+    env_file:
+      - front_admin.env
   backend:
     image: alexk0valchuk/bwgcombat:salobackend
     command: >
