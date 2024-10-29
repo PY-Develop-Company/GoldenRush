@@ -44,6 +44,9 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    volumes:
+      - media:/app/media/
+      - static:/app/staticfiles/
   db:
     image: postgres:16-alpine
     environment:
@@ -93,3 +96,5 @@ services:
 
 volumes:
     dev-db-data:
+    media:
+    static:
