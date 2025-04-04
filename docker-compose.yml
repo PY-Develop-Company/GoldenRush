@@ -3,13 +3,10 @@ version: "3.8"
 services:
   tg_bot:
     image: alexk0valchuk/bwgcombat:tgbot
-    environment:
-      - BOT_TOKEN=${BOT_TOKEN}
-      - BACKEND_URL=${BACKEND_URL}
-      - WEBAPP_URL=${WEBAPP_URL}
-      - ADMIN_ID=${ADMIN_ID}
-      - CHANNEL_ID=${CHANNEL_ID}
-      - CHANNEL_URL=${CHANNEL_URL}
+    env_file:
+      - .env
+    volumes:
+      - ./media:/app/media
     depends_on:
       - frontend
       - backend
@@ -63,37 +60,38 @@ services:
       - dev-db-data:/var/lib/postgresql/data
     restart: unless-stopped
   # ngrok_fe:
-  #   image: ngrok/ngrok:latest
-  #   command:
-  #     - "start"
-  #     - "--all"
-  #     - "--config"
-  #     - "/etc/ngrok_fe.yml"
-  #   volumes:
-  #     - ./ngrok_fe.yml:/etc/ngrok_fe.yml
-  #   environment:
-  #     - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN_FE}
-  #     - WEBAPP_URL=${WEBAPP_URL}
-  #   ports:
-  #     - 4040:4040
-  #   depends_on:
-  #     - frontend
-  # ngrok_be:
-  #   image: ngrok/ngrok:latest
-  #   command:
-  #     - "start"
-  #     - "--all"
-  #     - "--config"
-  #     - "/etc/ngrok_be.yml"
-  #   volumes:
-  #     - ./ngrok_be.yml:/etc/ngrok_be.yml
-  #   environment:
-  #     - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN_BE}
-  #     - BACKEND_URL=${BACKEND_URL}
-  #   ports:
-  #     - 4041:4040
-  #   depends_on:
-  #     - backend
+#  ngrok_fe:
+#    image: ngrok/ngrok:latest
+#    command:
+#      - "start"
+#      - "--all"
+#      - "--config"
+#      - "/etc/ngrok_fe.yml"
+#    volumes:
+#      - ./ngrok_fe.yml:/etc/ngrok_fe.yml
+#    environment:
+#      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN_FE}
+#      - WEBAPP_URL=${WEBAPP_URL}
+#    ports:
+#      - 4040:4040
+#    depends_on:
+#      - frontend
+#  ngrok_be:
+#    image: ngrok/ngrok:latest
+#    command:
+#      - "start"
+#      - "--all"
+#      - "--config"
+#      - "/etc/ngrok_be.yml"
+#    volumes:
+#      - ./ngrok_be.yml:/etc/ngrok_be.yml
+#    environment:
+#      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN_BE}
+#      - BACKEND_URL=${BACKEND_URL}
+#    ports:
+#      - 4041:4040
+#    depends_on:
+#      - backend
   redis:
     image: redislabs/rejson:latest
     ports:

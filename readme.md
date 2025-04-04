@@ -22,6 +22,16 @@ JWT_SIGNING_KEY=some_key
 
 TRANSFER_FEE_PERCENTAGE=3
 VIP_PRICE=100
+
+FAIRY_GIFT_SHOW_INTERVAL=600
+
+USDT_PAYOUT_MINIMUM_RANK=7
+
+CRYPTOPAY_TOKEN=__token__
+CRYPTOPAY_BASE_URL=https://pay.crypt.bot/api/
+CRYPTOPAY_TG_LINK=https://t.me/CryptoBot
+CRYPTOPAY_TG_TAG=@CryptoBot
+
 # TGBOT
 BOT_TOKEN=__token__
 
@@ -32,16 +42,20 @@ ADMIN_ID=111111111
 
 CHANNEL_ID=-1111111
 CHANNEL_URL=https://t.me/slug
-
 TG_CHANNEL=https://t.me/justforcheckingone
+
+MAILING_GROUP_SIZE=20
+MAILING_GROUP_INTERVAL=20
+MAILING_AVAILABLE_LANGUAGES=uk,ru,en
 ```
-2. Create an front.env file with the contents:
+2. Create a front.env file with the contents:
 ```
 REACT_APP_API_BASE_BASE_URL=http://localhost:8000
+REACT_APP_API_BASE_NOPROTOCOL_URL=localhost:8000
 REACT_APP_TELEGRAM_BOT_TOKEN=__token__
 
 REACT_APP_GET_USER_INFO_ENDPOINT=/user/get_info/
-REACT_APP_ADD_COINS_ENDPOINT=/user/add_coins/
+REACT_APP_ADD_COINS_ENDPOINT=/user/register_clicks/
 REACT_APP_GET_USER_REFERRALS_ENDPOINT=/user/get_user_referrals/
 REACT_APP_GET_FREN_LINK_ENDPOINT=/user/fren_link/
 REACT_APP_GET_USER_PARTNERS_ENDPOINT=/levels/partner_tasks/
@@ -50,14 +64,30 @@ REACT_APP_EXECUTE_SWAP_ENDPOINT=/exchanger/execute_swap/
 REACT_APP_EXECUTE_TRANSFER_ENDPOINT=/exchanger/execute_transfer/
 REACT_APP_EXECUTE_TRANSACTIONS_ENDPOINT=/exchanger/all_transactions/
 REACT_APP_UPDATE_SETTINGS_ENDPOINT=/user/update_settings/
-REACT_APP_GET_ALL_ACTIVE_BANNER_ADVERTS_ENDPOINT=/ads/all_banner_adverts/
+REACT_APP_GET_ALL_ACTIVE_BANNER_ADVERTS_ENDPOINT=/ads/all_active_relevant_banner_adverts/
 REACT_APP_GET_RANDOM_FULLSCREEN_BANNER_ADVERTS_ENDPOINT=/ads/get_relevant_random_fullscreen_advert/
 REACT_APP_TRACK_BANNER_ADVERTS_ENDPOINT=/ads/track_banner_ad/
+REACT_APP_GIVE_ADVIEW_REWARD_ENDPOINT=/ads/give_adview_reward/
 REACT_APP_CHECK_PARTNER_TASK_ENDPOINT=/levels/check_partner_task/
 REACT_APP_CHECK_SOCIALS_TASK_ENDPOINT=/levels/check_social_task/
 REACT_APP_GET_TRANSFER_FEE_ENDPOINT=/exchanger/get_transfer_fee/
+REACT_APP_CREATE_INVOICE_ENDPOINT=/exchanger/create_invoice/
+REACT_APP_CHECK_INVOICE_ENDPOINT=/exchanger/check_invoice_status/
+REACT_APP_CRYPTO_TRANSFER_ENDPOINT=/exchanger/crypto_transfer/
+REACT_APP_GET_ALL_REGIONS=/user/all_regions/
+REACT_APP_CREATE_ADSET=/ads/create_adset/
+REACT_APP_GET_USER_ADSETS=/ads/all_user_adsets/
+REACT_APP_GET_BANNER_ADVERT=/ads/get_banner_advert/
+REACT_APP_GET_FULLSCREEN_ADVERT=/ads/get_fullscreen_advert/
+REACT_APP_CREATE_BANER_ADVERT=/ads/create_banner_ad/
+REACT_APP_CREATE_FULLSCREEN_ADVERT=/ads/create_fullscreen_ad/
+REACT_APP_ENABLE_ADSET=/ads/enable_adset/
+REACT_APP_DISABLE_ADSET=/ads/disable_adset/
+REACT_APP_ADD_DELETE_ADSET=/ads/delete_adset/
+REACT_APP_CANSELL_SHUTDOWN=/ads/cancel_adset_disabling/
 REACT_APP_GET_EXCHANGER_RATE_ENDPOINT=/exchanger/get_exchange_rate/
 REACT_APP_BY_VIP_RATE_ENDPOINT=/exchanger/buy_vip/
+REACT_APP_UPDATE_LAST_ACTIVE=/user/update_last_active/
 REACT_APP_EXECUTE_GAMELIST=/api/mini_games_app/
 REACT_APP_GAME1_MONEY=/api/mini_games_app/fortune
 REACT_APP_GAME1_START=/api/mini_games_app/fortune/start
@@ -65,9 +95,43 @@ REACT_APP_GAME1_RESULT=/api/mini_games_app/fortune/result
 REACT_APP_GAME2_MONEY=/api/mini_games_app/sapper
 REACT_APP_GAME2_START=/api/mini_games_app/sapper/start
 REACT_APP_GAME2_RESULT=/api/mini_games_app/sapper/result
+REACT_APP_GAME3_WEBS=/ws/minigames/crash/
+REACT_APP_GAME3_MAKEBET=/api/mini_games_app/crash/make_bet
+REACT_APP_GAME3_TAKEBET=/api/mini_games_app/crash/pick_up_bet
+REACT_APP_GAME4_MAKEBET=/api/mini_games_app/graph/make_bet
+REACT_APP_GAME4_CHECKGAME=/api/mini_games_app/graph/is_user_in_game
+REACT_APP_GAME4_PERSONAL_GAME=/ws/minigames/graph/personalgame
+REACT_APP_GAME4_GETBTCPRICE=/api/mini_games_app/graph/get_cost_btc
+REACT_APP_GAME4_GET_LAST_GAME=/api/mini_games_app/graph/get_last_info_game
+REACT_APP_GAME4_LINKS=/api/mini_games_app/graph/links
+REACT_APP_GAME4_WEBS=/ws/minigames/graph/
+REACT_APP_GAME4_WEBS2=/ws/minigames/graph/costbtc/
+REACT_APP_GAME4_GETBTCPRICE=/api/mini_games_app/graph/get_cost_btc
+REACT_APP_GAME5_MONEY=/api/mini_games_app/football
+REACT_APP_GAME5_WEBS=/ws/minigames/football/
+REACT_APP_GAME5_START=/api/mini_games_app/football/start
+REACT_APP_GAME5_END=/api/mini_games_app/football/end
+REACT_APP_PICK_GENDER=/user/pick_gender/
+REACT_APP_LEVEL_NEXT_RANK=/levels/next_rank/
+REACT_APP_GET_USER_CURRENT_STAGE_INFO=/levels/get_user_current_stage_info/
+REACT_APP_CLAIM_TASK=/levels/claim_task/
+REACT_APP_BUY_TASK=/levels/buy_task/
+REACT_APP_BUY_ROAD=/levels/buy_road/
+REACT_APP_GET_USER_CURRENT_RANK_INFO=/levels/get_user_current_rank_info/
+REACT_APP_NEXT_STAGE=/levels/next_stage/
 
 REACT_APP_SKIP_TELEGRAM_INIT=false
-REACT_APP_TEST_USER_ID=123568
+REACT_APP_TEST_USER_ID=123456
+```
+front_admin.env
+```
+REACT_APP_API_BASE_BASE_URL=http://localhost:8000
+REACT_APP_LOGIN_ENDPOINT=/ads/admin_login/
+REACT_APP_GET_ADVERTS_ENDPOINT=/ads/verification_requests/
+REACT_APP_VERIFICATION_ENDPOINT=/ads/handle_advert_verification_request/
+REACT_APP_GET_INVITERS_ENDPOINT=/api/stats/get-all-inviters/
+REACT_APP_GET_GAME_STATS=/api/stats/get-game-stats/
+REACT_APP_GET_ALL_INVOICES=/api/stats/get-all-invoices
 ```
 3. Ask Salo for 2 ngrok tokens and 2 ngrok domains (for BE and FE);
 4. Open ngrok_be.yml (set hostname as be_ngrok_domain);
