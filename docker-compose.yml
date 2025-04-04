@@ -59,7 +59,6 @@ services:
     volumes:
       - dev-db-data:/var/lib/postgresql/data
     restart: unless-stopped
-  # ngrok_fe:
 #  ngrok_fe:
 #    image: ngrok/ngrok:latest
 #    command:
